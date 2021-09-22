@@ -1,0 +1,11 @@
+<div class="user-list" *ngIf="user">
+    <img src="{{user.imageUrl}}" alt="">
+    <p>{{user.name}} {{user.surname}}</p>
+    <p>{{user.mail}}</p>
+    <p>{{user.location.address}}, {{user.location.city}}</p>
+    <p>Ordini: {{user.orders.length}}</p>
+    <p>View Orders</p>
+    <button>Edit</button>
+    <button>Delete</button>
+
+</div>

@@ -1,0 +1,17 @@
+<div class="container-card" *ngIf="!modal; else order">
+    <div class="card" *ngIf="user">
+        <img src="{{user.imageUrl}}" alt="">
+        <hr>
+        <p>{{user.name}} {{user.surname}}</p>
+        <p>{{user.mail}}</p>
+        <p>{{user.location.address}} {{user.location.city}}</p>
+        <p>Ordini: {{user.orders.length}}</p>
+        <a href="#" (click)="modalView(user)">View Orders</a>
+        <button>Edit</button>
+        <button>Delete</button>
+    </div>
+</div>
+
+<ng-template #order>
+    <app-orders (orders)="modalView($event)"></app-orders>
+</ng-template>

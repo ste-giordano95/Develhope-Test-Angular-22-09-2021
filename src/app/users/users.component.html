@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Users</h1>
+    <div class="navbar justify-content-around">
+        <a href="#" (click)="changeView()">Card View</a>
+        <a href="#" (click)="changeView()">List View</a>
+        <a href="#">+ New User</a>
+    </div>
+
+    <div class="card-container" *ngIf="!button; else list">
+        <div *ngFor="let currentUser of users">
+            <app-users-card [user]="currentUser"></app-users-card>
+        </div>
+    </div>
+
+    <ng-template #list>
+        <div class="legend">
+            <p>Name</p>
+            <p>Mail</p>
+            <p>Address</p>
+            <p>Orders:#</p>
+        </div>
+        <div *ngFor="let currentUser of users">
+            <app-users-list [user]="currentUser"></app-users-list>
+        </div>
+    </ng-template>
+
+</div>
